@@ -100,11 +100,30 @@ img {
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  
+}.new-card.highlighted {
+  background-color: rgba(255, 215, 0, 0.3); /* Light yellow highlight */
+  border: 2px solid #ffd700; /* Yellow border */
 }
+
 
 .card__img {
   width: 100%;
   border-radius: 1.5rem;
+  opacity: 0.5; /* Set opacity to make the image semi-transparent */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+}
+
+/* Optional: Add a hover effect to increase the visibility slightly */
+.card__article:hover .card__img {
+  opacity: 0.9; /* Slightly reduce transparency on hover */
+}
+
+/* Style for selected card to prevent transition reset */
+.card__article.selected {
+  opacity: 1 !important; /* Ensure the selected card stays fully visible */
+  transform: translateY(-1.5rem); /* Keep the card elevated */
+  transition: none; /* Disable further transitions on the selected card */
 }
 
 .card__data {
@@ -165,6 +184,23 @@ img {
   border-radius: 1rem;
   box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
 }
+
+.new-card {
+  padding: 2rem;
+  border-radius: 1rem;
+  /* color: white; */
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+  text-align: center;
+}
+
+/* Different colors for new cards */
+/* Increase specificity to ensure background colors apply */
+#new-cards.extraCard1 .new-card { background-color: #4CAF50; }
+#new-cards.extraCard2 .new-card { background-color: #FF9800; }
+#new-cards.extraCard3 .new-card { background-color: #2196F3; }
+#new-cards.extraCard4 .new-card { background-color: #9C27B0; }
+#new-cards.extraCard5 .new-card { background-color: #FFC107; }
+#new-cards.extraCard6 .new-card { background-color: #E91E63; }
 
 .new-card h3 {
   font-size: 1.5rem;
